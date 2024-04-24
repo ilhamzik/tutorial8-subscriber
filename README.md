@@ -14,3 +14,8 @@ guest pertama pada kode tersebut merupakan username yang digunakan untuk mengaks
 localhost:5672 merujuk pada tempat kode ini dijalankan,yaitu pada mesin lokal itu sendiri, yang mendengar pada port `5672`. 
 
 ![image](https://github.com/ilhamzik/tutorial8-subscriber/assets/124953758/dbbb14f1-67e0-4d53-a46b-a9d7354bbb85)
+
+3 terminal subscriber
+![image](https://github.com/ilhamzik/tutorial8-subscriber/assets/124953758/3a51baa7-2181-439f-ac46-fd6ae6301e)
+
+Ketika menjalankan beberapa aplikasi subscriber untuk satu antrian yang sama, jumlah pesan yang diterima oleh setiap subscriber akan berkurang dibandingkan jika hanya ada satu subscriber. RabbitMQ menggunakan strategi load balancing untuk mendistribusikan pesan di antara subscriber yang tersedia. Secara default, RabbitMQ menggunakan strategi round-robin untuk mendistribusikan pesan ke subscriber yang terhubung ke antrian yang sama. Artinya, jika terdapat tiga subscriber terhubung ke antrian "user_created", setiap subscriber akan menerima sekitar sepertiga dari total pesan yang dikirimkan ke antrian tersebut. Contohnya, jika ada 15 pesan yang dikirimkan ke antrian "user_created" dan ada tiga subscriber terhubung, masing-masing subscriber akan menerima sekitar 5 pesan (dengan asumsi pembagian merata). Namun, jika hanya ada satu subscriber yang terhubung ke antrian, subscriber tersebut akan menerima semua pesan yang dikirimkan ke antrian. Strategi load balancing ini bertujuan untuk membagi beban kerja antara subscriber dan meningkatkan throughput keseluruhan sistem. Dengan lebih banyak subscriber, setiap subscriber hanya perlu memproses sebagian dari total pesan, yang dapat mengurangi kemacetan dan meningkatkan kinerja sistem secara keseluruhan.
