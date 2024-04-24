@@ -12,3 +12,5 @@ Di dalam file main.rs, saya menggunakan protokol AMQP untuk menerima pesan dari 
 guest pertama pada kode tersebut merupakan username yang digunakan untuk mengakses server _AMQP_ _RabbitMQ_. sedangkan guest kedua merupakan password dari username, yang dimana pada kode tersebut merupakan guest. 
 
 localhost:5672 merujuk pada tempat kode ini dijalankan,yaitu pada mesin lokal itu sendiri, yang mendengar pada port `5672`. 
+
+![image](https://github.com/ilhamzik/tutorial8-subscriber/assets/124953758/dbbb14f1-67e0-4d53-a46b-a9d7354bbb85)
